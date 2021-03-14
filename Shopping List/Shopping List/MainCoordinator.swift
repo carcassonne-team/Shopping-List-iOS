@@ -7,22 +7,34 @@
 
 import UIKit
 
-protocol MainCoordinatorProtocol: CoordinatorProtocol { }
+protocol MainCoordinatorProtocol: CoordinatorProtocol, StartScreenViewControllerCoordinating { }
+
+protocol StartScreenViewControllerCoordinating {
+    func showLoginViewController()
+    func showRegistrationViewController()
+}
 
 final class MainCoordinator: MainCoordinatorProtocol {
+    private var childCoordinators = [CoordinatorProtocol]()
     private let navigation: UINavigationController
+    
     init(navigation: UINavigationController) {
         self.navigation = navigation
     }
-    var childCoordinators = [CoordinatorProtocol]()
     
     func start() {
-        let viewController = StartScreenViewController()
+        let viewController = StartScreenViewController(viewModel: StartScreenViewModel(coordinator: self))
         navigation.setNavigationBarHidden(true, animated: false)
         navigation.setViewControllers([viewController], animated: false)
     }
     
     func didFinish(with child: CoordinatorProtocol?) {
         childCoordinators.removeAll() { $0 === child }
+    }
+    
+    func showLoginViewController() {
+    }
+    
+    func showRegistrationViewController() {
     }
 }

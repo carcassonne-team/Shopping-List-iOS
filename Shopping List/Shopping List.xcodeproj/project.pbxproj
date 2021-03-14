@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		6DAF55B725FE883F005D7ABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55B625FE883F005D7ABF /* AppDelegate.swift */; };
 		6DAF55B925FE883F005D7ABF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55B825FE883F005D7ABF /* SceneDelegate.swift */; };
-		6DAF55BB25FE883F005D7ABF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55BA25FE883F005D7ABF /* ViewController.swift */; };
+		6DAF55BB25FE883F005D7ABF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55BA25FE883F005D7ABF /* StartScreenViewController.swift */; };
 		6DAF55C025FE8841005D7ABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DAF55BF25FE8841005D7ABF /* Assets.xcassets */; };
 		6DAF55C325FE8841005D7ABF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAF55C125FE8841005D7ABF /* LaunchScreen.storyboard */; };
 		6DAF55CE25FE8842005D7ABF /* Shopping_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55CD25FE8842005D7ABF /* Shopping_ListTests.swift */; };
 		6DAF55D925FE8842005D7ABF /* Shopping_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55D825FE8842005D7ABF /* Shopping_ListUITests.swift */; };
 		6DAF55EA25FE900F005D7ABF /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55E925FE900F005D7ABF /* CoordinatorProtocol.swift */; };
 		6DAF55F225FE9462005D7ABF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55F125FE9462005D7ABF /* MainCoordinator.swift */; };
+		6DAF55F725FEA535005D7ABF /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55F625FEA535005D7ABF /* StartScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		6DAF55B325FE883F005D7ABF /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAF55B625FE883F005D7ABF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DAF55B825FE883F005D7ABF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6DAF55BA25FE883F005D7ABF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DAF55BA25FE883F005D7ABF /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		6DAF55BF25FE8841005D7ABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DAF55C225FE8841005D7ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DAF55C425FE8841005D7ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		6DAF55DA25FE8842005D7ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DAF55E925FE900F005D7ABF /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		6DAF55F125FE9462005D7ABF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		6DAF55F625FEA535005D7ABF /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +105,13 @@
 			children = (
 				6DAF55B625FE883F005D7ABF /* AppDelegate.swift */,
 				6DAF55B825FE883F005D7ABF /* SceneDelegate.swift */,
-				6DAF55BA25FE883F005D7ABF /* ViewController.swift */,
+				6DAF55BA25FE883F005D7ABF /* StartScreenViewController.swift */,
 				6DAF55BF25FE8841005D7ABF /* Assets.xcassets */,
 				6DAF55C125FE8841005D7ABF /* LaunchScreen.storyboard */,
 				6DAF55C425FE8841005D7ABF /* Info.plist */,
 				6DAF55E925FE900F005D7ABF /* CoordinatorProtocol.swift */,
 				6DAF55F125FE9462005D7ABF /* MainCoordinator.swift */,
+				6DAF55F625FEA535005D7ABF /* StartScreenViewModel.swift */,
 			);
 			path = "Shopping List";
 			sourceTree = "<group>";
@@ -260,11 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DAF55BB25FE883F005D7ABF /* ViewController.swift in Sources */,
+				6DAF55BB25FE883F005D7ABF /* StartScreenViewController.swift in Sources */,
 				6DAF55B725FE883F005D7ABF /* AppDelegate.swift in Sources */,
 				6DAF55EA25FE900F005D7ABF /* CoordinatorProtocol.swift in Sources */,
 				6DAF55F225FE9462005D7ABF /* MainCoordinator.swift in Sources */,
 				6DAF55B925FE883F005D7ABF /* SceneDelegate.swift in Sources */,
+				6DAF55F725FEA535005D7ABF /* StartScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
