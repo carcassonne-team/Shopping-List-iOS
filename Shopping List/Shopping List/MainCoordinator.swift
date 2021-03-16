@@ -29,7 +29,7 @@ final class MainCoordinator: MainCoordinatorProtocol {
     }
     
     func didFinish(with child: CoordinatorProtocol?) {
-        childCoordinators.removeAll() { $0 === child }
+        childCoordinators.removeAll { $0 === child }
     }
     
     func showLoginViewController() {
