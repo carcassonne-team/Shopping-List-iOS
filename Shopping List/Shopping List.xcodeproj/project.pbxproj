@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D3C315E260A73B80064F4E7 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C315D260A73B80064F4E7 /* CoordinatorType.swift */; };
 		6DA18CCC260281B200F66A1B /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CCB260281B200F66A1B /* LoginCoordinator.swift */; };
 		6DA18CD12602851700F66A1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA18CD02602851700F66A1B /* LoginViewController.swift */; };
 		6DAF55B725FE883F005D7ABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF55B625FE883F005D7ABF /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D3C315D260A73B80064F4E7 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		6DA18CCB260281B200F66A1B /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		6DA18CD02602851700F66A1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6DAF55B325FE883F005D7ABF /* Shopping List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D3C315B260A73420064F4E7 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				6D3C315C260A738E0064F4E7 /* Coordinator */,
+				6DAF55F125FE9462005D7ABF /* MainCoordinator.swift */,
+				6DA18CCB260281B200F66A1B /* LoginCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		6D3C315C260A738E0064F4E7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6DAF55E925FE900F005D7ABF /* CoordinatorProtocol.swift */,
+				6D3C315D260A73B80064F4E7 /* CoordinatorType.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		6DAF55AA25FE883E005D7ABF = {
 			isa = PBXGroup;
 			children = (
@@ -107,16 +128,14 @@
 		6DAF55B525FE883F005D7ABF /* Shopping List */ = {
 			isa = PBXGroup;
 			children = (
+				6D3C315B260A73420064F4E7 /* Coordinators */,
 				6DAF55B625FE883F005D7ABF /* AppDelegate.swift */,
 				6DAF55B825FE883F005D7ABF /* SceneDelegate.swift */,
 				6DAF55BA25FE883F005D7ABF /* StartScreenViewController.swift */,
 				6DAF55BF25FE8841005D7ABF /* Assets.xcassets */,
 				6DAF55C125FE8841005D7ABF /* LaunchScreen.storyboard */,
 				6DAF55C425FE8841005D7ABF /* Info.plist */,
-				6DAF55E925FE900F005D7ABF /* CoordinatorProtocol.swift */,
-				6DAF55F125FE9462005D7ABF /* MainCoordinator.swift */,
 				6DAF55F625FEA535005D7ABF /* StartScreenViewModel.swift */,
-				6DA18CCB260281B200F66A1B /* LoginCoordinator.swift */,
 				6DA18CD02602851700F66A1B /* LoginViewController.swift */,
 			);
 			path = "Shopping List";
@@ -295,6 +314,7 @@
 				6DA18CCC260281B200F66A1B /* LoginCoordinator.swift in Sources */,
 				6DAF55EA25FE900F005D7ABF /* CoordinatorProtocol.swift in Sources */,
 				6DA18CD12602851700F66A1B /* LoginViewController.swift in Sources */,
+				6D3C315E260A73B80064F4E7 /* CoordinatorType.swift in Sources */,
 				6DAF55F225FE9462005D7ABF /* MainCoordinator.swift in Sources */,
 				6DAF55B925FE883F005D7ABF /* SceneDelegate.swift in Sources */,
 				6DAF55F725FEA535005D7ABF /* StartScreenViewModel.swift in Sources */,
