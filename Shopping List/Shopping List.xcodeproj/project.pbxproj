@@ -105,6 +105,32 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		6D7C16C0260BF88700C56B32 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				6D7C16C2260BF8D000C56B32 /* Login */,
+				6D7C16C1260BF89D00C56B32 /* Start */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		6D7C16C1260BF89D00C56B32 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				6DAF55BA25FE883F005D7ABF /* StartScreenViewController.swift */,
+				6DAF55F625FEA535005D7ABF /* StartScreenViewModel.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		6D7C16C2260BF8D000C56B32 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6DA18CD02602851700F66A1B /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		6DAF55AA25FE883E005D7ABF = {
 			isa = PBXGroup;
 			children = (
@@ -128,15 +154,13 @@
 		6DAF55B525FE883F005D7ABF /* Shopping List */ = {
 			isa = PBXGroup;
 			children = (
+				6D7C16C0260BF88700C56B32 /* Screens */,
 				6D3C315B260A73420064F4E7 /* Coordinators */,
 				6DAF55B625FE883F005D7ABF /* AppDelegate.swift */,
 				6DAF55B825FE883F005D7ABF /* SceneDelegate.swift */,
-				6DAF55BA25FE883F005D7ABF /* StartScreenViewController.swift */,
 				6DAF55BF25FE8841005D7ABF /* Assets.xcassets */,
 				6DAF55C125FE8841005D7ABF /* LaunchScreen.storyboard */,
 				6DAF55C425FE8841005D7ABF /* Info.plist */,
-				6DAF55F625FEA535005D7ABF /* StartScreenViewModel.swift */,
-				6DA18CD02602851700F66A1B /* LoginViewController.swift */,
 			);
 			path = "Shopping List";
 			sourceTree = "<group>";
