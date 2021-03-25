@@ -17,6 +17,8 @@ protocol StartScreenViewControllerCoordinating {
 final class MainCoordinator: MainCoordinatorProtocol {
     private var childCoordinators = [CoordinatorProtocol]()
     private let navigation: UINavigationController
+    var type: CoordinatorType { .app }
+    var linkedCoordinators = LinkedCoordinators()
     
     init(navigation: UINavigationController) {
         self.navigation = navigation
@@ -26,10 +28,6 @@ final class MainCoordinator: MainCoordinatorProtocol {
         let viewController = StartScreenViewController(viewModel: StartScreenViewModel(coordinator: self))
         navigation.setNavigationBarHidden(true, animated: false)
         navigation.setViewControllers([viewController], animated: false)
-    }
-    
-    func didFinish(with child: CoordinatorProtocol?) {
-        childCoordinators.removeAll { $0 === child }
     }
     
     func showLoginViewController() {

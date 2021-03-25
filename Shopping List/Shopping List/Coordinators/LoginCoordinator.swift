@@ -10,11 +10,8 @@ import UIKit
 protocol LoginCoordinatorProtocol: CoordinatorProtocol { }
  
 final class LoginCoordinator: LoginCoordinatorProtocol {
+    var type: CoordinatorType { .login }
+    var linkedCoordinators = LinkedCoordinators()
     func start() {
-        
-    }
-    
-    func didFinish(with child: CoordinatorProtocol?) {
-        
     }
 }

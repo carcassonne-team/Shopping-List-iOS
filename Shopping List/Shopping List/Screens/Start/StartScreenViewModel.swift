@@ -12,7 +12,7 @@ protocol StartScreenViewModelProtocol {
     func registrationButtonDidTap()
 }
 
-class StartScreenViewModel: StartScreenViewModelProtocol {
+final class StartScreenViewModel: StartScreenViewModelProtocol {
     private let coordinator: StartScreenViewControllerCoordinating
     
     init(coordinator: StartScreenViewControllerCoordinating) {
