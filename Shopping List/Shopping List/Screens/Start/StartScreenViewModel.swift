@@ -13,17 +13,17 @@ protocol StartScreenViewModelProtocol {
 }
 
 final class StartScreenViewModel: StartScreenViewModelProtocol {
-    private let coordinator: StartScreenViewControllerCoordinating
+    private weak var coordinator: StartScreenViewControllerCoordinating?
     
     init(coordinator: StartScreenViewControllerCoordinating) {
         self.coordinator = coordinator
     }
     
     func loginButtonDidTap() {
-        coordinator.showLoginViewController()
+        coordinator?.showLoginViewController()
     }
     
     func registrationButtonDidTap() {
-        coordinator.showRegistrationViewController()
+        coordinator?.showRegistrationViewController()
     }
 }

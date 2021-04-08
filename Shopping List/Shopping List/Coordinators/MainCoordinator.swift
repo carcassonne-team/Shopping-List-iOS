@@ -9,7 +9,7 @@ import UIKit
 
 protocol MainCoordinatorProtocol: CoordinatorProtocol, StartScreenViewControllerCoordinating { }
 
-protocol StartScreenViewControllerCoordinating {
+protocol StartScreenViewControllerCoordinating: AnyObject {
     func showLoginViewController()
     func showRegistrationViewController()
 }
