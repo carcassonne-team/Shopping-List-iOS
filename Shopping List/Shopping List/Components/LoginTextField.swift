@@ -15,7 +15,6 @@ extension UITextField {
     
     static func loginTextField() -> UITextField {
         let textField = baseTextField()
-        textField.textContentType = .username
         textField.keyboardType = .emailAddress
         
         return textField
@@ -23,7 +22,6 @@ extension UITextField {
     
     static func passwordTextField() -> UITextField {
         let textField = baseTextField()
-        textField.textContentType = .password
         textField.isSecureTextEntry = true
         
         return textField

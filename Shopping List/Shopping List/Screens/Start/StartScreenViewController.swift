@@ -54,7 +54,9 @@ final class StartScreenViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(notification: Notification) {
-        guard let keyboardFrame = notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect, scrollView.contentInset.bottom == 0 else { return }
+        guard let keyboardFrame = notification
+                .userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect,
+              scrollView.contentInset.bottom == 0 else { return }
         scrollView.contentInset.bottom += keyboardFrame.height
     }
     
@@ -121,7 +123,7 @@ final class StartScreenViewController: UIViewController {
         separatorView.textAlignment = .center
         separatorView.snp.makeConstraints { make in
             make.height.equalTo(Constants.separatorViewHeight)
-            make.leading.trailing.equalTo(stackView).inset(Constants.Margins.stackViewSide)
+            make.leading.trailing.equalTo(view).inset(Constants.Margins.stackViewSide)
         }
     }
     
@@ -143,14 +145,14 @@ final class StartScreenViewController: UIViewController {
     }
     
     private func setupLoginButton() {
-        loginButton.setTitle(NSLocalizedString("signInButtonTitle", comment: "String"), for: .normal)
+        loginButton.setTitle(NSLocalizedString("signInButtonTitle", comment: ""), for: .normal)
         loginButton.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(stackView).inset(Constants.Margins.stackViewSide)
+            make.leading.trailing.equalTo(view).inset(Constants.Margins.stackViewSide)
         }
     }
     
     private func setupForgotPasswordButton() {
-        forgotPassword.setTitle("Forgot your password?", for: .normal)
+        forgotPassword.setTitle(NSLocalizedString("passwordForgotButton", comment: ""), for: .normal)
         forgotPassword.setTitleColor(.green, for: .normal)
         forgotPassword.snp.makeConstraints { make in
             make.height.equalTo(Constants.separatorViewHeight)
