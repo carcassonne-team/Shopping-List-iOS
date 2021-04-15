@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Shopping List
+
+  Created by Mateusz Leśniara on 15/04/2021.
+  
+*/
+
+"signUpButtonTitle" = "Sign up";
+"signInButtonTitle" = "Sign in";
+"signUpButtonTitle" = "Sign up";
+"loginSeparator" = "or";

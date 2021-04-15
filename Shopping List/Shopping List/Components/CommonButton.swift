@@ -16,7 +16,6 @@ extension UIButton {
     static func commonButton() -> UIButton {
         let button = UIButton()
         button.backgroundColor = Colors.CommonButton.background
-        button.tintColor = Colors.CommonButton.title
         button.snp.makeConstraints { make in
             make.height.equalTo(Constans.height)
         }

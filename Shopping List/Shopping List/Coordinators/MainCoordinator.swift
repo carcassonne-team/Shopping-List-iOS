@@ -14,7 +14,11 @@ protocol StartScreenViewControllerCoordinating: AnyObject {
     func showRegistrationViewController()
 }
 
-final class MainCoordinator: MainCoordinatorProtocol {
+protocol RegistrationViewControllerCoordinating: AnyObject {
+    func showLoginViewController()
+}
+
+final class MainCoordinator: MainCoordinatorProtocol, RegistrationViewControllerCoordinating {
     private var childCoordinators = [CoordinatorProtocol]()
     private let navigation: UINavigationController
     var type: CoordinatorType { .app }
@@ -34,5 +38,8 @@ final class MainCoordinator: MainCoordinatorProtocol {
     }
     
     func showRegistrationViewController() {
+        let viewController = RegistrationViewController(viewModel: RegistrationViewModel(coordinator: self))
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigation.present(navigationController, animated: true)
     }
 }

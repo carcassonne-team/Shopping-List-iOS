@@ -24,7 +24,7 @@ extension UIStackView {
         stackView.snp.makeConstraints { make in
             make.height.equalTo(Constants.height)
         }
-        [#imageLiteral(resourceName: "loginIcon"), #imageLiteral(resourceName: "loginIcon"), #imageLiteral(resourceName: "loginIcon")].forEach {
+        [#imageLiteral(resourceName: "FacebookIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "LinkedInIcon")].forEach {
             let imageView = UIImageView()
             let containerView = UIView()
             imageView.image = $0
@@ -37,6 +37,7 @@ extension UIStackView {
                 make.size.equalTo(Constants.imageViewSize)
             }
         }
+        
         return stackView
     }
 }
