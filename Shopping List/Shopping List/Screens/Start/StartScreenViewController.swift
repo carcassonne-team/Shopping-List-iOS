@@ -53,6 +53,10 @@ final class StartScreenViewController: UIViewController {
         viewModel.registrationButtonDidTap()
     }
     
+    @objc func loginButtonAction(sender: UIButton!) {
+        viewModel.loginButtonDidTap()
+    }
+    
     @objc func keyboardWillShow(notification: Notification) {
         guard let keyboardFrame = notification
                 .userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect,
@@ -146,6 +150,7 @@ final class StartScreenViewController: UIViewController {
     
     private func setupLoginButton() {
         loginButton.setTitle(NSLocalizedString("signInButtonTitle", comment: ""), for: .normal)
+        loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         loginButton.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view).inset(Constants.Margins.stackViewSide)
         }

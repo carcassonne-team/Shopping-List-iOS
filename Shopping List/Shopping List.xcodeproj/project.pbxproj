@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0404AD263B1A6B003D3D7D /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0404AC263B1A6B003D3D7D /* ListModel.swift */; };
+		6D0404B3263B4C2E003D3D7D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6D0404B2263B4C2E003D3D7D /* KeychainSwift */; };
+		6D0404C1263B4DBD003D3D7D /* AuthApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0404C0263B4DBD003D3D7D /* AuthApiProvider.swift */; };
+		6D0404C9263B4E24003D3D7D /* ListApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0404C8263B4E24003D3D7D /* ListApiProvider.swift */; };
+		6D0404D4263C08E4003D3D7D /* TokenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0404D3263C08E4003D3D7D /* TokenInfo.swift */; };
+		6D22F75F26398A33004B71A2 /* ProductListsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D22F75E26398A33004B71A2 /* ProductListsService.swift */; };
 		6D3C315E260A73B80064F4E7 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3C315D260A73B80064F4E7 /* CoordinatorType.swift */; };
 		6D64E5F2261F391D00AA1413 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64E5F1261F391D00AA1413 /* LoginTextField.swift */; };
 		6D64E5FA261F3E4C00AA1413 /* SocialMediaMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64E5F9261F3E4C00AA1413 /* SocialMediaMenuView.swift */; };
@@ -53,6 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D0404AC263B1A6B003D3D7D /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		6D0404C0263B4DBD003D3D7D /* AuthApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiProvider.swift; sourceTree = "<group>"; };
+		6D0404C8263B4E24003D3D7D /* ListApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListApiProvider.swift; sourceTree = "<group>"; };
+		6D0404D3263C08E4003D3D7D /* TokenInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInfo.swift; sourceTree = "<group>"; };
+		6D22F75E26398A33004B71A2 /* ProductListsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListsService.swift; sourceTree = "<group>"; };
 		6D3C315D260A73B80064F4E7 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		6D64E5F1261F391D00AA1413 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		6D64E5F9261F3E4C00AA1413 /* SocialMediaMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaMenuView.swift; sourceTree = "<group>"; };
@@ -90,6 +101,7 @@
 			files = (
 				6DB9EF7F2636FB8400888F1B /* RxMoya in Frameworks */,
 				6DB9EF812636FB8400888F1B /* ReactiveMoya in Frameworks */,
+				6D0404B3263B4C2E003D3D7D /* KeychainSwift in Frameworks */,
 				6DB9EF7D2636FB8400888F1B /* Moya in Frameworks */,
 				6D7A3044260CB43F004556B8 /* SnapKit in Frameworks */,
 			);
@@ -112,6 +124,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D04049D263AFAE0003D3D7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D0404AC263B1A6B003D3D7D /* ListModel.swift */,
+				6D0404D3263C08E4003D3D7D /* TokenInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D0404BF263B4D91003D3D7D /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				6D0404C0263B4DBD003D3D7D /* AuthApiProvider.swift */,
+				6D0404C8263B4E24003D3D7D /* ListApiProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		6D3C315B260A73420064F4E7 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +231,7 @@
 		6DAF55B525FE883F005D7ABF /* Shopping List */ = {
 			isa = PBXGroup;
 			children = (
+				6D04049D263AFAE0003D3D7D /* Model */,
 				6DB9EF852636FBA600888F1B /* Networking */,
 				6D64E613261F8A0000AA1413 /* Resources */,
 				6D64E5F0261F38E000AA1413 /* Components */,
@@ -245,7 +276,9 @@
 		6DB9EF992637035900888F1B /* ApiServices */ = {
 			isa = PBXGroup;
 			children = (
+				6D0404BF263B4D91003D3D7D /* Providers */,
 				6DB9EF8C2636FC3200888F1B /* AuthApiService.swift */,
+				6D22F75E26398A33004B71A2 /* ProductListsService.swift */,
 			);
 			path = ApiServices;
 			sourceTree = "<group>";
@@ -272,6 +305,7 @@
 				6DB9EF7C2636FB8400888F1B /* Moya */,
 				6DB9EF7E2636FB8400888F1B /* RxMoya */,
 				6DB9EF802636FB8400888F1B /* ReactiveMoya */,
+				6D0404B2263B4C2E003D3D7D /* KeychainSwift */,
 			);
 			productName = "Shopping List";
 			productReference = 6DAF55B325FE883F005D7ABF /* Shopping List.app */;
@@ -347,6 +381,7 @@
 			packageReferences = (
 				6D7A3042260CB43F004556B8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6DB9EF7B2636FB8400888F1B /* XCRemoteSwiftPackageReference "Moya" */,
+				6D0404B1263B4C2E003D3D7D /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 6DAF55B425FE883F005D7ABF /* Products */;
 			projectDirPath = "";
@@ -412,6 +447,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D64E625261F901B00AA1413 /* CommonButton.swift in Sources */,
+				6D0404AD263B1A6B003D3D7D /* ListModel.swift in Sources */,
+				6D0404C9263B4E24003D3D7D /* ListApiProvider.swift in Sources */,
+				6D0404D4263C08E4003D3D7D /* TokenInfo.swift in Sources */,
 				6DAF55BB25FE883F005D7ABF /* StartScreenViewController.swift in Sources */,
 				6D64E60C261F83C500AA1413 /* Colors.swift in Sources */,
 				6D64E615261F8A6000AA1413 /* Fonts.swift in Sources */,
@@ -427,7 +465,9 @@
 				6DB9EF8D2636FC3200888F1B /* AuthApiService.swift in Sources */,
 				6D64E5FA261F3E4C00AA1413 /* SocialMediaMenuView.swift in Sources */,
 				6DAF55F725FEA535005D7ABF /* StartScreenViewModel.swift in Sources */,
+				6D0404C1263B4DBD003D3D7D /* AuthApiProvider.swift in Sources */,
 				6D64E5F2261F391D00AA1413 /* LoginTextField.swift in Sources */,
+				6D22F75F26398A33004B71A2 /* ProductListsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +806,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6D0404B1263B4C2E003D3D7D /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
 		6D7A3042260CB43F004556B8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -785,6 +833,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6D0404B2263B4C2E003D3D7D /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D0404B1263B4C2E003D3D7D /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
 		6D7A3043260CB43F004556B8 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6D7A3042260CB43F004556B8 /* XCRemoteSwiftPackageReference "SnapKit" */;
