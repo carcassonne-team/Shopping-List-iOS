@@ -8,5 +8,5 @@
 import Foundation
 
 enum NetworkingConstants {
-    static let baseURL = "http://projekt.shoplist.site:8080/api"
+    static let baseURL = "https://projekt.shoplist.site/api"
 }

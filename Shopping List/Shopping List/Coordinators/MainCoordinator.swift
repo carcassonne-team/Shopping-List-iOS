@@ -10,12 +10,21 @@ import UIKit
 protocol MainCoordinatorProtocol: CoordinatorProtocol, StartScreenViewControllerCoordinating { }
 
 protocol StartScreenViewControllerCoordinating: AnyObject {
-    func showLoginViewController()
+    func showDashboardViewController()
     func showRegistrationViewController()
 }
 
 protocol RegistrationViewControllerCoordinating: AnyObject {
     func showLoginViewController()
+}
+
+protocol DashboardViewControllerCoordinating: AnyObject {
+    func showListContnet(list: ListModel)
+    func showAddListViewController()
+    func showProductViewController(list: ListModel)
+}
+
+protocol AddListViewControllerCoordinating: AnyObject {
 }
 
 final class MainCoordinator: MainCoordinatorProtocol, RegistrationViewControllerCoordinating {
@@ -34,7 +43,14 @@ final class MainCoordinator: MainCoordinatorProtocol, RegistrationViewController
         navigation.setViewControllers([viewController], animated: false)
     }
     
+    func showDashboardViewController() {
+        let dashboardCoordinator = DashboardCoordinator(navigation: navigation)
+//        dashboardCoordinator.start()
+        coordinate(to: dashboardCoordinator)
+    }
+    
     func showLoginViewController() {
+        
     }
     
     func showRegistrationViewController() {

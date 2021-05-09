@@ -16,6 +16,8 @@ extension UITextField {
     static func loginTextField() -> UITextField {
         let textField = baseTextField()
         textField.keyboardType = .emailAddress
+        textField.placeholder =
+            NSLocalizedString("emailPlaceholder", comment: "")
         
         return textField
     }
@@ -23,11 +25,12 @@ extension UITextField {
     static func passwordTextField() -> UITextField {
         let textField = baseTextField()
         textField.isSecureTextEntry = true
+        textField.placeholder = NSLocalizedString("passwordPlaceholder", comment: "")
         
         return textField
     }
     
-    private static func baseTextField() -> UITextField {
+    static func baseTextField() -> UITextField {
         let textField = UITextField()
         textField.font = Fonts.textField
         textField.backgroundColor = Colors.LoginTextField.background

@@ -8,7 +8,7 @@
 import Foundation
 
 final class ListModel: Codable {
-    private enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case name
         case content = "list_content"
@@ -18,7 +18,7 @@ final class ListModel: Codable {
     let content: [Content]?
     
     struct Content: Codable {
-        private enum CodingKeys: String, CodingKey {
+         enum CodingKeys: String, CodingKey {
             case productName = "product_name"
             case productId = "product_id"
             case categoryName = "category_name"

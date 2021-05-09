@@ -14,7 +14,6 @@ enum ProductListsService {
     case deleteList(parameters: DeleteParameters)
 }
 
-/// zmienic task na z jednym parametrem
 struct CreateParameters: Encodable {
     let name: String
 }
@@ -23,7 +22,11 @@ struct DeleteParameters: Encodable {
     let id: String
 }
 
-extension ProductListsService: TargetType {
+extension ProductListsService: TargetType, AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType? {
+        .bearer
+    }
+    
     var baseURL: URL {
         URL(string: NetworkingConstants.baseURL + "/lists")!
     }
@@ -57,7 +60,7 @@ extension ProductListsService: TargetType {
     var task: Task {
         switch self {
         case .fetchList:
-            return .requestCustomJSONEncodable("token?", encoder: JSONEncoder.snakeCaseEncoder)
+            return .requestPlain
         case .createList(parameters: let parameters):
             return .requestCustomJSONEncodable(parameters, encoder: JSONEncoder.snakeCaseEncoder)
         case .deleteList(parameters: let parameters):

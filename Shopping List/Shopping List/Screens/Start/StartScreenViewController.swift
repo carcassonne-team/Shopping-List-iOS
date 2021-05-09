@@ -54,7 +54,7 @@ final class StartScreenViewController: UIViewController {
     }
     
     @objc func loginButtonAction(sender: UIButton!) {
-        viewModel.loginButtonDidTap()
+        viewModel.loginButtonDidTap(loginParameters: loginCredentails())
     }
     
     @objc func keyboardWillShow(notification: Notification) {
@@ -158,12 +158,19 @@ final class StartScreenViewController: UIViewController {
     
     private func setupForgotPasswordButton() {
         forgotPassword.setTitle(NSLocalizedString("passwordForgotButton", comment: ""), for: .normal)
-        forgotPassword.setTitleColor(.green, for: .normal)
+        forgotPassword.setTitleColor(.black, for: .normal)
         forgotPassword.snp.makeConstraints { make in
             make.height.equalTo(Constants.separatorViewHeight)
             make.left.equalTo(stackView).inset(Constants.Margins.stackViewSide)
         }
         
+    }
+    
+    private func loginCredentails() -> LoginParameters {
+        let login = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        return LoginParameters(email: login, password: password)
     }
     
     private func setupSignUp() {

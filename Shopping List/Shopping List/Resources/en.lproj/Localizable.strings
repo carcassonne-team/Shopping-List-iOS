@@ -10,3 +10,9 @@
 "signInButtonTitle" = "Sign in";
 "passwordForgotButton" = "Forgot your password?";
 "loginSeparator" = "or";
+"emailPlaceholder" = "Email";
+"passwordPlaceholder" = "Password";
+"passwordConfPlaceholder" = "Password repeat";
+"namePlaceholder" = "Name";
+"addListTitle" = "Add list";
+"addListButton" = "Add";

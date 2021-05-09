@@ -11,7 +11,7 @@ import KeychainSwift
 
 final class ListApiProvider {
     private let keychain = KeychainSwift()
-    private lazy var moyaProvier = MoyaProvider<ProductListsService>(plugins: [AccessTokenPlugin(tokenClosure: { [weak self] _ in
+    lazy var moyaProvier = MoyaProvider<ProductListsService>(plugins: [AccessTokenPlugin(tokenClosure: { [weak self] _ in
         return self?.keychain.get("token") ?? ""
     })])
 }

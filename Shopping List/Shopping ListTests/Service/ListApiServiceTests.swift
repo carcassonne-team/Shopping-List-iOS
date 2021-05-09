@@ -1,15 +1,15 @@
 //
-//  Shopping_ListTests.swift
+//  ListApiServiceTests.swift
 //  Shopping ListTests
 //
-//  Created by Mateusz Leśniara on 14/03/2021.
+//  Created by Mateusz Leśniara on 09/05/2021.
 //
 
 import XCTest
 import UIKit
 @testable import Shopping_List
 
-class ShoppingListTests: XCTestCase {
+class ListApiServiceTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -76,3 +76,4 @@ class ShoppingListTests: XCTestCase {
     }
 
 }
+

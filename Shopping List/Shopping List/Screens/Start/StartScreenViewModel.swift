@@ -12,7 +12,7 @@ import Moya
 import KeychainSwift
 
 protocol StartScreenViewModelProtocol {
-    func loginButtonDidTap()
+    func loginButtonDidTap(loginParameters: LoginParameters)
     func registrationButtonDidTap()
 }
 
@@ -25,23 +25,21 @@ final class StartScreenViewModel: StartScreenViewModelProtocol {
         self.coordinator = coordinator
     }
     
-    func loginButtonDidTap() {
-        let loginParameters = LoginParameters(email: "t@t.com", password: "halo123")
+    func loginButtonDidTap(loginParameters: LoginParameters) {
         provider.rx.request(.login(parameters: loginParameters))
             .filterSuccessfulStatusCodes()
-                .map(TokenInfo.self)
+            .map(TokenInfo.self)
             .subscribe { [weak self] event in
                 switch event {
                 case let .success(response):
                     let token = response.token
-
                     self?.keychain.set(token ?? "", forKey: "token")
-                    case let .error(error):
-                        print(error)
+                    self?.coordinator?.showDashboardViewController()
+                case let .error(error):
+                    print(error)
                 }
-                
             }
-        }
+    }
     
     func registrationButtonDidTap() {
         coordinator?.showRegistrationViewController()
