@@ -39,8 +39,6 @@ final class DashboardCoordinator: DashboardCoordinatorProtocol,
     
     func showAddListViewController() {
         let viewController = AddListViewController(viewModel: AddListViewModel(coordinator: self))
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        navigation.present(navigationController, animated: true)
         navigation.setNavigationBarHidden(false, animated: false)
         navigation.pushViewController(viewController, animated: false)
     }

@@ -45,7 +45,6 @@ final class MainCoordinator: MainCoordinatorProtocol, RegistrationViewController
     
     func showDashboardViewController() {
         let dashboardCoordinator = DashboardCoordinator(navigation: navigation)
-//        dashboardCoordinator.start()
         coordinate(to: dashboardCoordinator)
     }
     

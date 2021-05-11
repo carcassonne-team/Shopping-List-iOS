@@ -5,10 +5,9 @@
 //  Created by Mateusz Leśniara on 14/03/2021.
 //
 
-import UIKit
-import SnapKit
-import RxMoya
+import RxSwift
 import Moya
+import RxMoya
 import KeychainSwift
 
 protocol StartScreenViewModelProtocol {
@@ -17,9 +16,10 @@ protocol StartScreenViewModelProtocol {
 }
 
 final class StartScreenViewModel: StartScreenViewModelProtocol {
-    private weak var coordinator: StartScreenViewControllerCoordinating?
     let provider = MoyaProvider<AuthApiService>()
     let keychain = KeychainSwift()
+    private let disposeBag = DisposeBag()
+    private weak var coordinator: StartScreenViewControllerCoordinating?
     
     init(coordinator: StartScreenViewControllerCoordinating) {
         self.coordinator = coordinator
@@ -38,7 +38,7 @@ final class StartScreenViewModel: StartScreenViewModelProtocol {
                 case let .error(error):
                     print(error)
                 }
-            }
+            }.disposed(by: disposeBag)
     }
     
     func registrationButtonDidTap() {

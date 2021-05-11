@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 protocol ProductsViewModelProtocol {
     var products: [ProductModel] { get set }
@@ -21,6 +22,7 @@ final class ProductsViewModel: ProductsViewModelProtocol {
     var currentList: ListModel
     private let productsProvider = ProductsApiProvider()
     private let listsProvider = ListContentApiProvider()
+    private let disposeBag = DisposeBag()
     
     init(coordinator: DashboardViewControllerCoordinating,
          currentList: ListModel) {
@@ -37,7 +39,7 @@ final class ProductsViewModel: ProductsViewModelProtocol {
                 case let .error(error):
                     print(error.localizedDescription)
                 }
-            }
+            }.disposed(by: disposeBag)
     }
      
     func fetchProducts(completion: @escaping (() -> Void)) {
@@ -53,6 +55,6 @@ final class ProductsViewModel: ProductsViewModelProtocol {
                 case let .error(error):
                     print(error.localizedDescription)
                 }
-            }
+            }.disposed(by: disposeBag)
     }
 }

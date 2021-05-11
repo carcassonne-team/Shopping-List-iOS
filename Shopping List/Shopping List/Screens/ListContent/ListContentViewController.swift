@@ -29,7 +29,6 @@ final class ListContentViewController: UIViewController {
     }
     
     private func commonInit() {
-        fetchList()
         view.addSubview(tableView)
         setupTableView()
         tableView.reloadData()
@@ -43,10 +42,6 @@ final class ListContentViewController: UIViewController {
             make.edges.equalToSuperview()
             make.leading.trailing.equalTo(view).inset(20)
         }
-    }
-    
-    private func fetchList() {
-//        viewModel.fetchLists(completion: nil)
     }
 }
 
@@ -66,10 +61,6 @@ extension ListContentViewController: UITableViewDataSource {
 extension ListContentViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        viewModel.listCellDidTap(index: indexPath.item)
     }
 }
 

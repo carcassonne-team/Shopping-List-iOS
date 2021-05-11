@@ -4,6 +4,7 @@
 //
 //  Created by Mateusz Leśniara on 08/05/2021.
 //
+// swiftlint:disable colon
 
 import Foundation
 import Moya

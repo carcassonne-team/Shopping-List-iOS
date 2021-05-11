@@ -16,13 +16,12 @@ final class ProductsViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
+    
     @objc func buttonAction(sender: UIButton!) {
-//        viewModel.addListButtonDidTap()
         tableView.reloadData()
     }
     
     override func viewDidLoad() {
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(buttonAction))
         commonInit()
     }
     
@@ -52,7 +51,6 @@ final class ProductsViewController: UIViewController {
             self?.tableView.reloadData()
         })
     }
-
 }
 
 extension ProductsViewController: UITableViewDataSource {

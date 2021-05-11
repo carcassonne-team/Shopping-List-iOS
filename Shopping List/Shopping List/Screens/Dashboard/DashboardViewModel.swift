@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol DashboardViewModelProtocol {
     var lists: [ListModel] { get set}
@@ -15,9 +16,10 @@ protocol DashboardViewModelProtocol {
 }
 
 final class DashbaordViewModel: DashboardViewModelProtocol {
-    private let provider = ListApiProvider()
     var lists: [ListModel] = []
     private weak var coordinator: DashboardViewControllerCoordinating?
+    private let provider = ListApiProvider()
+    private let disposeBag = DisposeBag()
    
     init(coordinator: DashboardViewControllerCoordinating) {
         self.coordinator = coordinator
@@ -26,7 +28,7 @@ final class DashbaordViewModel: DashboardViewModelProtocol {
     func addListButtonDidTap() {
         coordinator?.showAddListViewController()
     }
-//    anylisViewController
+    
     func listCellDidTap(list: ListModel) {
         coordinator?.showListContnet(list: list)
         print(index)
@@ -45,6 +47,6 @@ final class DashbaordViewModel: DashboardViewModelProtocol {
                 case let .error(error):
                     print(error.localizedDescription)
                 }
-            }
+            }.disposed(by: disposeBag)
     }
 }

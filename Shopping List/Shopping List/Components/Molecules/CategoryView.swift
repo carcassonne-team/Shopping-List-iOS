@@ -13,10 +13,6 @@ final class CategoryView: UIStackView {
     private let titleView = UILabel()
     private let chevronView = UIButton()
     
-    /// update
-    /// konfigurator przyjmuje protocol
-    /// extension do Category View
-    
     init() {
         super.init(frame: .zero)
         
@@ -68,7 +64,6 @@ final class CategoryView: UIStackView {
         chevronView.setTitle("Delete", for: .normal)
         chevronView.setTitleColor(.red, for: .normal)
         chevronView.contentMode = .scaleAspectFit
-//        chevronView.image = #imageLiteral(resourceName: "LinkedInIcon")
         chevronView.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.width.equalTo(60)

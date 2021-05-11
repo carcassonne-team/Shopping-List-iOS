@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 protocol AddListViewModelProtocol {
     func addListButtonDidTap(name: CreateParameters)
@@ -15,6 +16,7 @@ protocol AddListViewModelProtocol {
 final class AddListViewModel: AddListViewModelProtocol {
     private let coordinator: DashboardViewControllerCoordinating
     private let provider = ListApiProvider()
+    private let disposeBag = DisposeBag()
     
     init(coordinator: DashboardViewControllerCoordinating) {
         self.coordinator = coordinator
@@ -30,6 +32,6 @@ final class AddListViewModel: AddListViewModelProtocol {
                 case let .error(error):
                     print(error.localizedDescription)
                 }
-            }
+            }.disposed(by: disposeBag)
     }
 }

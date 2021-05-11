@@ -4,6 +4,7 @@
 //
 //  Created by Mateusz Leśniara on 28/04/2021.
 //
+// swiftlint:disable colon
 
 import Foundation
 import Moya
@@ -79,5 +80,4 @@ extension JSONEncoder {
         encoder.keyEncodingStrategy = .convertToSnakeCase
         return encoder
     }()
-    
 }

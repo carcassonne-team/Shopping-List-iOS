@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import RxSwift
 
 protocol RegistrationViewModelProtocol {
     func registerButtonDidTap(registerParameters: RegisterParameters)
@@ -15,6 +16,7 @@ protocol RegistrationViewModelProtocol {
 final class RegistrationViewModel: RegistrationViewModelProtocol {
     private weak var coordinator: RegistrationViewControllerCoordinating?
     private let provider = MoyaProvider<AuthApiService>()
+    private let disposeBag = DisposeBag()
     
     init(coordinator: RegistrationViewControllerCoordinating) {
         self.coordinator = coordinator
@@ -29,7 +31,6 @@ final class RegistrationViewModel: RegistrationViewModelProtocol {
                 case let .error(error):
                     print(error)
                 }
-//                coordinator?.showLoginViewController()
-            }
+            }.disposed(by: disposeBag)
     }
 }
